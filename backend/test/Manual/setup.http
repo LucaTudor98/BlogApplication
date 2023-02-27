@@ -1,0 +1,13 @@
+
+ @hostname = http://localhost:8000/setup
+get {{ hostname}}
+Content-Type: application/json 
+
+
+{
+    "user" : "root",
+    "password" : "Password",
+    "database" : "newdb"
+}
+
+

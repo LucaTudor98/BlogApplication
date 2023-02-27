@@ -1,0 +1,60 @@
+@hostname = http://localhost:8000/api/users
+
+@sToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3OCwibmFtZSI6InoiLCJlbWFpbCI6InpAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsInBhc3N3b3JkIjoiIiwiZGF0ZUNyZWF0ZWQiOiIyMDIyLTA0LTI1IiwiZGF0ZU1vZGlmaWVkIjoiMjAyMi0wNS0wMSJ9LCJpYXQiOjE2NTE0MzM5ODEsImV4cCI6MTY1MTQzNzU4MX0.jrIvYbI4dnpg6lny8mG2a8v_wHUnUbS04-lphH_uRcg
+
+@aToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsInBhc3N3b3JkIjoiIiwiaW1nUGF0aCI6IjE2NTUyODU2NzA0NDUtMTY4MzQzNjU4LnBuZyIsImRhdGVDcmVhdGVkIjoiMjAyMi0wNi0xM1QxNToyMToxOC4wMDBaIiwiZGF0ZU1vZGlmaWVkIjoiMjAyMy0wMi0yM1QxMTowODoxMi41NDNaIn0sImlhdCI6MTY3NzE3MTQ3NywiZXhwIjoxNjc3MTc1MDc3fQ.af3VsSbFCebbnzsnR_KL5fOwTy-Ny_eH-zBJToK_v5E
+
+@token = {{aToken}}
+
+get {{hostname}}/?page=1&limit=20&name=
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+###
+
+get {{hostname}}/1
+Authorization: Bearer {{token}}
+
+###
+
+post {{hostname}}
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+    "name" : "admin",
+    "email" : "admin@gmail.com",
+    "password" : "12345",
+    "isAdmin": true
+}
+
+###
+
+delete {{hostname}}/55
+Authorization: Bearer {{token}}
+
+###
+
+PUT {{hostname}}/3
+Content-Type: application/json 
+Authorization: Bearer {{token}}
+
+{
+    "name" : "admin",
+    "email" : "admin@localhost.com",
+    "password" : "12345",
+    "isAdmin": true
+}
+
+###
+PUT {{hostname}}/256
+Content-Type: multipart/form-data; boundary=test
+Authorization: Bearer {{token}}
+
+--test
+Content-Disposition: form-data; name="avatar"; filename="1.png"
+Content-Type: image/png
+
+< ../../images/1.png
+--test--
+

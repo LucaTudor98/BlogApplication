@@ -1,0 +1,53 @@
+@hostname = http://localhost:8000/api/comments
+
+@contentType=application/json
+
+@sToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjo3OCwibmFtZSI6InoiLCJlbWFpbCI6InpAZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsInBhc3N3b3JkIjoiIiwiZGF0ZUNyZWF0ZWQiOiIyMDIyLTA0LTI1IiwiZGF0ZU1vZGlmaWVkIjoiMjAyMi0wNS0wMSJ9LCJpYXQiOjE2NTE0ODI2NTIsImV4cCI6MTY1MTQ4NjI1Mn0.N2XcqxMv4aVmuUaTwU_WsWKk1IGoizG83OLWVszSCE0
+
+@aToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiQ29uc3RhbnQiLCJlbWFpbCI6ImNvbnN0YW50QGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsInBhc3N3b3JkIjoiIiwiZGF0ZUNyZWF0ZWQiOiIyMDIyLTAzLTE2IiwiZGF0ZU1vZGlmaWVkIjoiMjAyMi0wNC0yNiJ9LCJpYXQiOjE2NTE0ODI3MDEsImV4cCI6MTY1MTQ4NjMwMX0.R4eSZdPlBYEYl4ly2gDcjtV4HmsW_HQIeCvUyASQek4
+
+@token = {{aToken}}
+
+GET http://localhost:8000/api/comments
+
+###
+GET http://localhost:8000/api/comments/2
+
+###
+GET http://localhost:8000/api/comments?postId=26&page=2
+
+###
+GET http://localhost:8000/api/comments?postId=26&parentId=%00
+
+###
+GET http://localhost:8000/api/comments?postId=26&parentId=4
+
+###
+GET http://localhost:8000/api/comments?parentId=4
+
+###
+POST http://localhost:8000/api/comments
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+        "postId": 26,
+        "parentId": null,
+        "text": "CUSER If you’ve ever read a blog post, you’ve consumed content from a thought leader that is an expert in their industry. Chances are if the blog post was written effectively, you came away with helpful knowledgeCUSER If you’ve ever read a blog post, you’ve consumed content from a thought leader that is an expert in their industry. Chances are if the blog post was written effectively, you came away with helpful knowledge"
+}
+
+###
+
+PUT http://localhost:8000/api/comments/480
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+        "text": "Thank you for your post!"
+}
+
+###
+DELETE  http://localhost:8000/api/comments/480
+Authorization: Bearer {{token}}
+
+

@@ -1,0 +1,12 @@
+@hostname = http://localhost:8000/api/auth
+
+post {{hostname}}/token
+Authorization: Basic YXBwbGljYXRpb246c2VjcmV0
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&password=12345&username=admin
+
+###
+
+get {{hostname}}/login
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJuYW1lIjoiQ29uc3RhbnQiLCJlbWFpbCI6ImNvbnN0YW50QGdtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsInBhc3N3b3JkIjoiIiwiZGF0ZUNyZWF0ZWQiOiIyMDIyLTAzLTE2IiwiZGF0ZU1vZGlmaWVkIjoiMjAyMi0wNC0yNiJ9LCJpYXQiOjE2NTE5NDk0OTIsImV4cCI6MTY1MTk1MzA5Mn0.R9eRFSqlSlw6o-3Vb6mUcAMNWmClU81Ii4e580f65FU

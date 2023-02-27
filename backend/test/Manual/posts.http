@@ -1,0 +1,36 @@
+@url = http://localhost:8000/api/posts
+
+GET {{url}}?page=1&limit=100
+
+###
+
+GET {{url}}/11
+
+###
+
+GET {{url}}/?search=&page=2&limit=5
+###
+
+POST {{url}}
+Content-Type : application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjowLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJwYXNzd29yZCI6IiIsImRhdGVDcmVhdGVkIjoiMjAyMi0wNi0xMyIsImRhdGVNb2RpZmllZCI6IjIwMjItMDYtMTMiLCJpbWdQYXRoIjoiIn0sImlhdCI6MTY1NTEyNzM1MywiZXhwIjoxNjU1MTMwOTUzfQ.Aa_QAzPc53GgVoqv2fVQph6jNcVJNQn5C_sLq1mZRJ8
+
+{
+	"title" : "Second test",
+    "content" : "New test"
+}
+
+###
+
+PUT {{url}}/11
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6ImFkbWluQGxvY2FsaG9zdC5jb20iLCJpc0FkbWluIjp0cnVlLCJwYXNzd29yZCI6IiIsImltZ1BhdGgiOiIxNjU1Mjg1NjcwNDQ1LTE2ODM0MzY1OC5wbmciLCJkYXRlQ3JlYXRlZCI6IjIwMjItMDYtMTNUMTU6MjE6MTguMDAwWiIsImRhdGVNb2RpZmllZCI6IjIwMjMtMDItMjNUMTc6MDI6NDkuMDU3WiJ9LCJpYXQiOjE2Nzc0OTY2NzQsImV4cCI6MTY3NzUwMDI3NH0.2GrKtzO2FlR5mDYzS5P3B3qMmByZktE4bM6E6txPI_U
+	
+    {
+        "content" : "new update"
+    }
+
+###
+
+DELETE {{url}}/70
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxNSwibmFtZSI6Imhhc2hlZDIzNCIsImVtYWlsIjoicmFuZG9tQGdtYWlsLmNvbSIsImlzQWRtaW4iOmZhbHNlLCJwYXNzd29yZCI6IiIsImRhdGVDcmVhdGVkIjoiMjAyMi0wNC0xMSIsImRhdGVNb2RpZmllZCI6IjIwMjItMDQtMTcifSwiaWF0IjoxNjUwMjczNjk1LCJleHAiOjE2NTAyNzcyOTV9.5X0Utf5KN1PQqM106Xk960fLm7G23VQ4LcTLlBteLqg
