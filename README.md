@@ -24,3 +24,9 @@ Before you can run the application, you need to install npm on your system. Npm 
 - Navigate to the client directory: cd client.
 - Run the command npm start to start the client app.
 - The client app will run on port 3000 by default.
+
+
+## Other
+There are 2 posts stored in the default database, also for logging in a user with admin credentials use the following credentials:
+- username: admin
+- password: 12345
